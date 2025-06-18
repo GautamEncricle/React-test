@@ -1,0 +1,19 @@
+.font-unbounded {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 400;
+}
+
+.unbounded-light {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 300;
+}
+
+.font-bold {
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 500;
+}
+
+.font-extrabold{
+    font-family: 'Unbounded', sans-serif;
+    font-weight: 700;
+}
