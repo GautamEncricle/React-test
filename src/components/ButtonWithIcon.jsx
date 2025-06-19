@@ -9,11 +9,11 @@ const ButtonWithIcon = ({
   width = 'w-[222px]',
   height = 'h-[50px]',
 }) => {
-  const baseClasses = clsx(
+  const baseClasses = clsx( 
     'relative',
-    'flex items-center justify-start',
-    'pl-9 pr-0',
-    'rounded-[5px]',
+    'flex',
+    'pl-2 pr-0 pt-1 pb-1',
+    'rounded-[10px]',
     'border border-[#796F51]',
     'bg-[#796F51]',
     'group',
@@ -29,24 +29,30 @@ const ButtonWithIcon = ({
     'leading-[27px]',
     'text-white',
     'capitalize',
-    'z-10'
+    'z-10',
+    'w-[150px]',
+    'h-[27px]',
+    'flex',
+    'truncate',
+    'left-0'
   );
 
   const iconWrapperClasses = clsx(
-    'absolute right-0 top-0',
+    'absolute right-[-1px] top-[-6px]',
     'flex items-center justify-center',
     'bg-white',
-    'rounded-r-[5px]',
+    'rounded-r-[10px]',
     'w-[51px]',
-    'h-full',
-    'z-20'
+    'h-[50px]',
+    'z-20',
+    'group-hover:bg-[#015829]'
   );
 
   const iconClasses = clsx(
-    'w-4 h-4',
+    'w-[16px] h-[16px]',
     'transition-colors duration-300 ease-in-out',
-    'group-hover:text-[#3BB54A]',
-    'text-white'
+    'text-black',
+    'group-hover:text-white'
   );
 
   const content = (

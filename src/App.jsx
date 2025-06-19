@@ -4,15 +4,22 @@ import Navbar from './components/Navbar'
 import ButtonWithIcon from './components/ButtonWithIcon'
 import './assets/css/font.css'
 import HeroSection from './sections/Hero'
+import AboutCompany from './sections/AboutCompany'
+import Container from './components/ServiceItem'
+import CreativeSolutions from './sections/CreativeSolutions'
+import ProjectPortfolio from './sections/ProjectPortfolio'
+import ProjectProcess from './sections/ProjectProcess'
 
 function App() {
 
   return (
     <>
-      {/* <Home /> */}
-      {/* <Navbar /> */}
+      <Navbar />
       <HeroSection />
-      {/* <ButtonWithIcon /> */}
+      <AboutCompany />
+      <CreativeSolutions />
+      <ProjectPortfolio />
+      <ProjectProcess />
     </>
   )
 }
