@@ -56,7 +56,7 @@ const ProjectPortfolio = () => {
     }, [handleScroll]);
 
     return (
-        <section className="bg-white font-sans py-16 sm:py-24">
+        <section className="bg-white overflow-hidden font-sans py-16 sm:py-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Section Header */}
                 <div className="text-center">
@@ -76,7 +76,7 @@ const ProjectPortfolio = () => {
                         style={{ scrollSnapType: 'x mandatory' }}
                     >
                         {projects.map((project, index) => (
-                            <div key={index} className="flex-shrink-0 w-[90%] sm:w-[60%] md:w-[50%] lg:w-[calc(100%/3.2)-1rem)] snap-center">
+                            <div key={index} className="flex-shrink-0 w-[90%] sm:w-[60%] md:w-[50%] lg:w-[calc(100%/3.2)-1rem)] snap-center ">
                                 <ProjectCard {...project} />
                             </div>
                         ))}

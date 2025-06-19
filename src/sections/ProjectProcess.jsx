@@ -44,7 +44,7 @@ const processData = [
 
 const ProjectProcess = () => {
     return (
-        <section className="bg-gray-50 font-sans py-20 sm:py-28">
+        <section className="bg-gray-50 max-w-full overflow-hidden font-sans py-15 sm:py-28">
             <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 {/* Section Header */}
@@ -91,20 +91,24 @@ const ProjectProcess = () => {
                                             <div className={`p-4 text-center ${isTopRow ? 'mt-8' : 'mb-8'}`}>
                                                 <div className={`p-4 text-center ${isTopRow ? 'mt-8' : 'mb-8'}`}>
                                                     {isTopRow ? (
-                                                        <div className='h-[200px]'>
+                                                        <div className='h-[200px] w-[19vw] flex flex-col items-center justify-start relative'>
                                                             {/* Vertical line */}
-                                                            <div className="relative w-0.5 h-15 bg-gray-300 right-[-50%] top-[-5px] mt-1 md:mt-0 lg:mt-[-2%] xl:mt-0 2xl:mt-0"></div>
-                                                            <p className="relative mt-4 text-2xl text-left font-bold text-emerald-800 left-[30%]">{step.number}</p>
-                                                            <h6 className="relative text-xl font-bold text-black w-[20vw]">{step.title}</h6>
-                                                            <p className="mt-2 text-gray-500 text-sm">{step.description}</p>
+                                                            <div className="relative w-0.5 min-h-13 bg-gray-300 md:top-[-2%]"></div>
+                                                            <div className="details md:relative top-[-15%]">
+                                                                <p className="relative mt-4 text-2xl text-left font-bold text-emerald-800">{step.number}</p>
+                                                                <h6 className="text-xl font-bold text-black w-[19vw] text-left">{step.title}</h6>
+                                                                <p className="mt-2 text-gray-500 text-sm w-[15vw]">{step.description}</p>
+                                                            </div>
                                                         </div>
                                                     ) : (
-                                                        <div className='h-[200px]'>
-                                                            <h6 className="text-xl font-bold text-black w-[20vw]">{step.title}</h6>
-                                                            <p className="mt-2 text-gray-500 text-sm">{step.description}</p>
-                                                            <p className="relative mt-4 text-2xl text-left font-bold text-emerald-800 left-[30%]">{step.number}</p>
+                                                        <div className='h-[200px] w-[15vw] flex flex-col items-center justify-end relative'>
+                                                            <div className="details md:relative md:bottom-[-15%]">
+                                                                <h6 className="text-xl font-bold text-black w-[19vw] text-left">{step.title}</h6>
+                                                                <p className="mt-2 text-gray-500 text-sm w-[15vw]">{step.description}</p>
+                                                                <p className="mt-4 text-2xl text-left font-bold text-emerald-800">{step.number}</p>
+                                                            </div>
                                                             {/* Vertical line */}
-                                                            <div className="relative w-0.5 h-15 bg-gray-300 left-[50%] mb-4 md:mb-4 lg:mt-[-2%] xl:mt-0 2xl:mt-5"></div>
+                                                            <div className="relative w-0.5 min-h-13 bg-gray-300 mt-2 bottom-[-2%]"></div>
                                                         </div>
                                                     )}
                                                 </div>
