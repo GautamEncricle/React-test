@@ -9,6 +9,7 @@ import Container from './components/ServiceItem'
 import CreativeSolutions from './sections/CreativeSolutions'
 import ProjectPortfolio from './sections/ProjectPortfolio'
 import ProjectProcess from './sections/ProjectProcess'
+import ProjectDetails from './sections/ProjectsDetails'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
       <CreativeSolutions />
       <ProjectPortfolio />
       <ProjectProcess />
+      <ProjectDetails />
     </>
   )
 }
