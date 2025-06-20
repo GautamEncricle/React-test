@@ -13,6 +13,7 @@ import ProjectDetails from './sections/ProjectsDetails'
 import TeamSection from './sections/TeamSection'
 import CollaboratorsSection from './sections/CollaboratorsSection'
 import ClientFeedback from './sections/ClientFeedback'
+import WorkShowcase from './sections/WorkShowCase'
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
       <TeamSection />
       <CollaboratorsSection />
       <ClientFeedback />
+      <WorkShowcase />
     </>
   )
 }

@@ -57,14 +57,14 @@ const ClientFeedback = () => {
                             className="relative w-full"
                         >
                             {/* The background shadow layer */}
-                            <div className="absolute inset-0 top-2 left-[5%] z-0 rounded-xl bg-black"></div>
+                            <div className="absolute inset-0 z-0 rounded-lg bg-[#e4e2dc] scale-[1.01] translate-x-4 translate-y-4"></div>
 
                             {/* The main content card */}
-                            <div className="relative z-10 flex flex-col items-start rounded-xl bg-[#6B624E] p-8 text-left text-white md:flex-row md: md:p-15">
+                            <div className="relative z-10 flex flex-col items-start rounded-xl bg-[#796f51] p-8 text-left text-white md:flex-row md:p-15">
                                 <p className="text-lg md:text-xl relative w-[50vw] md:w-[52vw] overflow-hidden">
                                     {feedbacks[currentIndex].text}
                                 </p>
-                                <img src={quoteIcon} alt="quotes" className='h-15 w-20 absolute top-10 right-5 md:right-12'/>
+                                <img src={quoteIcon} alt="quotes" className='h-15 w-20 absolute top-10 right-5 md:right-12' />
                             </div>
                         </motion.div>
                     </AnimatePresence>
