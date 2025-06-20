@@ -44,7 +44,7 @@ const ClientFeedback = () => {
                 <h2 className="mt-2 text-4xl font-bold text-gray-800 md:text-5xl">
                     Feedback From Clients
                 </h2>
-                    
+
                 {/* Testimonial Card Wrapper */}
                 <div className="relative mt-12 min-h-[250px]">
                     <AnimatePresence mode="wait">
@@ -61,10 +61,10 @@ const ClientFeedback = () => {
 
                             {/* The main content card */}
                             <div className="relative z-10 flex flex-col items-start rounded-xl bg-[#796f51] p-8 text-left text-white md:flex-row md:p-15">
-                                <p className="text-lg md:text-xl relative w-[50vw] md:w-[52vw] overflow-hidden">
+                                <p className="text-lg md:text-xl relative w-full md:w-5/6 overflow-hidden">
                                     {feedbacks[currentIndex].text}
                                 </p>
-                                <img src={quoteIcon} alt="quotes" className='h-15 w-20 absolute top-10 right-5 md:right-12' />
+                                <img src={quoteIcon} alt="quotes" className='h-10 w-10 md:h-15 md:w-20 absolute top-[-2%] md:top-10 right-5  md:right-12' />
                             </div>
                         </motion.div>
                     </AnimatePresence>

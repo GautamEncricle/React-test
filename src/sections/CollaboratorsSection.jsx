@@ -7,7 +7,7 @@ import furniture from '../assets/images/Partner/furniture.svg';
 import grayHouse from '../assets/images/Partner/gray-house.svg';
 import simpleHouse from '../assets/images/Partner/simpleHouse.svg';
 import houselux from '../assets/images/Partner/houseLux.svg';
-import interiorDesign from '../assets/images/Partner/interior.svg';
+import interiorDesign from '../assets/images/Partner/interior.svg'; 
 import housetica from '../assets/images/Partner/housetica.svg';
 
 const partners = [

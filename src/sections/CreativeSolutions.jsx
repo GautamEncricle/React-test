@@ -11,7 +11,7 @@ import planningImage from '../assets/images/service/image1.png';
 
 const ViewDetailsButton = () => (
     <div className="flex items-center">
-        <ButtonWithIcon text="View Details" href="#" width="w-[180px]" height="h-[38px]" />
+        <ButtonWithIcon text="View Details" href="#" width="w-[165px]" height="h-[38px]" />
     </div>
 );
 
@@ -97,11 +97,11 @@ const CreativeSolutions = () => {
                             </div>
 
                             {/* Action Buttons */}
-                            <div className="mt-10 flex items-center flex-wrap gap-6">
+                            <div className="mt-10 flex items-center flex-row gap-6">
                                 <ViewDetailsButton />
                                 <a href="#" className="flex items-center gap-3 text-black font-semibold group">
-                                    <div className="bg-emerald-800 text-white rounded-full h-11 w-11 flex items-center justify-center transition-transform group-hover:scale-110">
-                                        <img src={playIcon} alt="play icon" className="h-4 w-4" />
+                                    <div className="bg-emerald-800 text-white rounded-full h-11 w-17 md:h-11 md:w-11  flex items-center justify-center transition-transform group-hover:scale-110">
+                                        <img src={playIcon} alt="play icon" className="h-4 w-5" />
                                     </div>
                                     <span>How It Works</span>
                                 </a>

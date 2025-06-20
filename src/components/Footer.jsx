@@ -78,8 +78,8 @@ const Footer = () => {
             <div className="container mx-auto px-4 pt-16 sm:px-6 lg:px-8">
 
                 {/* Top CTA Section */}
-                <div className="flex flex-col md:flex-row items-center justify-between gap-6 md:gap-12">
-                    <h2 className="text-center md:text-left font-heading text-3xl md:text-4xl font-bold sm:text-5xl">
+                <div className="flex flex-col md:flex-row items-center gap-6 md:gap-0">
+                    <h2 className="text-center md:text-left md:max-w-[60vw] font-heading text-3xl md:text-4xl font-bold sm:text-5xl">
                         Partner with Us on Your Next Project.
                         <span className="mt-4 block rounded-lg bg-[#796f51] px-4 py-2 text-brand-dark inline-block">
                             Start Now
@@ -87,13 +87,13 @@ const Footer = () => {
                     </h2>
 
                     {/* Image Scroll Area */}
-                    <div className="flex justify-start gap-4 overflow-x-auto md:justify-end">
+                    <div className="flex justify-start gap-4 md:w-[60vw] overflow-x-auto md:justify-end">
                         {previewImages.map((src, index) => (
                             <img
                                 key={index}
                                 src={src}
                                 alt={`Project preview ${index + 1}`}
-                                className="h-32 min-w-[120px] rounded-xl object-cover shadow-lg"
+                                className="h-32 min-w-[150px] rounded-xl object-cover shadow-lg"
                             />
                         ))}
                     </div>

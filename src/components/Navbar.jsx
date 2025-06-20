@@ -1,105 +1,112 @@
 import React, { useState } from 'react';
+// --- Assuming these are your correct asset paths ---
 import Logo from '../assets/icons/Logo.png';
 import CallingIcon from '../assets/icons/calling.png';
 import EmailIcon from '../assets/icons/email.png';
+// ---
+
 import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  return (
-    <header className="w-full pt-3 pb-3 md:pt-6 md:pb-6 fixed top-0 bg-white z-50 shadow">
-      <div className="max-w-screen-xl mx-auto flex items-center justify-between px-4 sm:px-6 md:px-4">
+  // Data for navigation links to keep the code DRY
+  const navLinks = ['Home', 'About', 'Services', 'Portfolio', 'Contact Us'];
 
-        {/* Logo */}
-        <div className="flex-none md:w-32 w-full flex justify-center md:justify-start">
-          <img
-            src={Logo}
-            alt="Logo"
-            className="object-contain w-24 sm:w-28 md:w-full h-auto"
-          />
+  return (
+    // Use padding on a container div instead of the header for better control
+    <header className="fixed top-0 z-50 w-full bg-white shadow-md">
+      <div className="container mx-auto flex items-center justify-between px-4 py-4 lg:px-8">
+
+        {/* Logo - Pushed to the far left */}
+        <div className="flex-shrink-0">
+          <a href="/" aria-label="Home">
+            <img src={Logo} alt="RVA Logo" className="h-12 w-auto" />
+          </a>
         </div>
 
-
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-6 justify-center flex-grow">
-          {['Home', 'About', 'Services', 'Portfolio', 'Contact Us'].map((item) => {
-            const isHome = item === 'Home'; // you can later replace this with an active check
-            return (
-              <a
-                key={item}
-                href={`#${item.toLowerCase().replace(/\s/g, '')}`}
-                className={`font-unbounded ${isHome ? 'font-extrabold' : 'font-normal'
-                  } text-sm md:text-base text-[#796F51] capitalize`}
-              >
-                {item}
-              </a>
-            );
-          })}
+        {/* Desktop Navigation - Centered in the available space */}
+        <nav className="hidden lg:flex flex-grow items-center justify-center gap-8">
+          {navLinks.map((item) => (
+            <a
+              key={item}
+              href={`#${item.toLowerCase().replace(/\s/g, '')}`}
+              className={`
+                font-unbounded text-base capitalize text-[#796F51] transition-colors hover:text-black
+                ${item === 'Home' ? 'font-bold' : 'font-medium'}
+              `}
+            >
+              {item}
+            </a>
+          ))}
         </nav>
 
-
-        {/* Contact Info - Desktop */}
-        <div className="hidden md:flex items-center gap-4">
+        {/* Contact Info - Pushed to the far right */}
+        <div className="hidden lg:flex items-center gap-4">
           {/* Email */}
-          <div className="flex items-center gap-2 bg-[rgba(132,130,131,0.1)] rounded-full px-2 py-1">
-            <div className="flex justify-center items-center w-8 h-8 rounded-full bg-[rgba(132,130,131,0.1)]">
-              <img src={EmailIcon} alt="Email" className="w-4 h-4" />
+          <div className="flex items-center gap-3 rounded-full bg-gray-100 p-2">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm">
+              <img src={EmailIcon} alt="Email Icon" className="h-5 w-5" />
             </div>
-            <div className="flex flex-col items-start text-xs">
-              <span className="font-poppins text-[#161618]">Say hello to Email</span>
-              <span className="font-unbounded font-semibold text-[10px] text-[#161618]">contactRVA@gmail.com</span>
+            <div className="flex flex-col">
+              <span className="font-poppins text-xs text-gray-600">Say Hello To Email</span>
+              <a href="mailto:ContactRVA@Gmail.Com" className="font-unbounded text-xs font-semibold text-black hover:underline">
+                ContactRVA@Gmail.Com
+              </a>
             </div>
           </div>
-
           {/* Call */}
-          <div className="flex items-center gap-2 bg-[rgba(132,130,131,0.1)] rounded-full px-2 py-1">
-            <div className="flex justify-center items-center w-8 h-8 rounded-full bg-[rgba(132,130,131,0.1)]">
-              <img src={CallingIcon} alt="Call" className="w-4 h-4" />
+          <div className="flex items-center gap-3 rounded-full bg-gray-100 p-2">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-sm">
+              <img src={CallingIcon} alt="Call Icon" className="h-5 w-5" />
             </div>
-            <div className="flex flex-col items-start text-xs">
-              <span className="font-poppins text-[#161618]">Talk to an expert</span>
-              <span className="font-unbounded font-semibold text-[10px] text-[#161618]">+91 98*** *****</span>
+            <div className="flex flex-col">
+              <span className="font-poppins text-xs text-gray-600">Talk To An Experts</span>
+              <a href="tel:+919812345678" className="font-unbounded text-xs font-semibold text-black hover:underline">
+                +91 98*** *****
+              </a>
             </div>
           </div>
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden flex items-center pr-2">
+        {/* Mobile Menu Button (Hamburger) - Appears on tablet and mobile */}
+        <div className="lg:hidden">
           <button
             onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
-            className="text-[#796F51] text-2xl focus:outline-none"
+            className="text-2xl text-[#796F51] focus:outline-none"
+            aria-label="Toggle mobile menu"
           >
             {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Navigation Panel */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white shadow-lg px-4 pt-4 pb-6 flex flex-col gap-4 text-center">
-          {['Home', 'About', 'Services', 'Portfolio', 'Contact Us'].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase().replace(/\s/g, '')}`}
-              className="font-unbounded text-[#796F51] text-base capitalize"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {item}
-            </a>
-          ))}
-
-          {/* Contact Info - Mobile */}
-          <div className="flex flex-col gap-2 items-center mt-4">
-            <div className="flex items-center gap-2 bg-[rgba(132,130,131,0.1)] rounded-full px-3 py-2">
-              <img src={EmailIcon} alt="Email" className="w-4 h-4" />
-              <span className="text-xs text-[#161618]">contactRVA@gmail.com</span>
+        <div className="absolute w-full bg-white shadow-xl lg:hidden">
+          <nav className="flex flex-col items-center gap-4 px-4 pt-4 pb-6 text-center">
+            {navLinks.map((item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase().replace(/\s/g, '')}`}
+                className="w-full rounded-md py-2 font-unbounded text-base capitalize text-[#796F51] transition-colors hover:bg-gray-100"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {item}
+              </a>
+            ))}
+            {/* Mobile Contact Info */}
+            <div className="mt-4 flex flex-col items-center gap-4">
+              <a href="mailto:ContactRVA@Gmail.Com" className="flex items-center gap-3 rounded-full bg-gray-100 py-2 px-4">
+                <img src={EmailIcon} alt="Email" className="h-5 w-5" />
+                <span className="font-semibold text-black">ContactRVA@Gmail.Com</span>
+              </a>
+              <a href="tel:+919812345678" className="flex items-center gap-3 rounded-full bg-gray-100 py-2 px-4">
+                <img src={CallingIcon} alt="Call" className="h-5 w-5" />
+                <span className="font-semibold text-black">+91 98*** *****</span>
+              </a>
             </div>
-            <div className="flex items-center gap-2 bg-[rgba(132,130,131,0.1)] rounded-full px-3 py-2">
-              <img src={CallingIcon} alt="Call" className="w-4 h-4" />
-              <span className="text-xs text-[#161618]">+91 98*** *****</span>
-            </div>
-          </div>
+          </nav>
         </div>
       )}
     </header>

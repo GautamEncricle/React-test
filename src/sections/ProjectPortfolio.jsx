@@ -1,64 +1,45 @@
-import React, { useState, useRef, useCallback, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import ProjectCard from '../components/ProjectCard';
 import DiamondIcon from '../assets/icons/diamondIcon.png';
 
-//images
-import image1 from '../assets/images/Projects/image1.png'
-import image2 from '../assets/images/Projects/image2.png'
-import image3 from '../assets/images/Projects/image3.png'
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+// Import Swiper modules
+import { Pagination, Scrollbar } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
+// --- Images (assuming paths are correct) ---
+import image1 from '../assets/images/Projects/image1.png';
+import image2 from '../assets/images/Projects/image2.png';
+import image3 from '../assets/images/Projects/image3.png';
 
 const projects = [
-    {
-        imageSrc: image1,
-        title: 'Modern Interior Design',
-        description: 'Pretium fusce id velit ut tortor pretium. Convallis aenean et tortor at risus viverra adipiscing. In vitae turpis massa sed elementum tincidunt nuncpulvinar.',
-    },
-    {
-        imageSrc: image2,
-        title: 'Modern Interior Design',
-        description: 'A stunning bathroom renovation combining modern fixtures with warm, textured tiles for a spa-like feel.',
-    },
-    {
-        imageSrc: image3,
-        title: 'Modern Interior Design',
-        description: 'A cozy living area featuring a bold, knotted chair and sophisticated decor, creating a unique and inviting atmosphere.',
-    },
-    // Add more projects here to see the scroll work
-    {
-        imageSrc: image1,
-        title: 'Living Room Elegance',
-        description: 'Elegant living room with luxurious curtains and a modern, minimalist aesthetic for timeless appeal.',
-    },
+    { imageSrc: image1, title: 'Modern Interior Design', description: 'Pretium fusce id velit ut tortor pretium. Convallis aenean et tortor at risus viverra adipiscing. In vitae turpis massa sed elementum tincidunt nuncpulvinar.' },
+    { imageSrc: image2, title: 'Modern Bathroom Oasis', description: 'A stunning bathroom renovation combining modern fixtures with warm, textured tiles for a spa-like feel.' },
+    { imageSrc: image3, title: 'Artistic Living Space', description: 'A cozy living area featuring a bold, knotted chair and sophisticated decor, creating a unique and inviting atmosphere.' },
+    { imageSrc: image1, title: 'Living Room Elegance', description: 'Elegant living room with luxurious curtains and a modern, minimalist aesthetic for timeless appeal.' },
 ];
 
 const ProjectPortfolio = () => {
+    // State to track the active slide for custom pagination
     const [activeIndex, setActiveIndex] = useState(0);
-    const scrollContainerRef = useRef(null);
+    // Ref to control the Swiper instance
+    const swiperRef = useRef(null);
 
-    // Memoized scroll handler to prevent re-renders
-    const handleScroll = useCallback(() => {
-        const container = scrollContainerRef.current;
-        if (container) {
-            const scrollLeft = container.scrollLeft;
-            const cardWidth = container.scrollWidth / projects.length;
-            const newIndex = Math.round(scrollLeft / cardWidth);
-            if (newIndex !== activeIndex) {
-                setActiveIndex(newIndex);
-            }
+    const handleDotClick = (index) => {
+        if (swiperRef.current) {
+            swiperRef.current.slideTo(index);
         }
-    }, [activeIndex]);
-
-    // Attach and clean up the event listener
-    useEffect(() => {
-        const container = scrollContainerRef.current;
-        container?.addEventListener('scroll', handleScroll);
-        return () => container?.removeEventListener('scroll', handleScroll);
-    }, [handleScroll]);
+    };
 
     return (
         <section className="bg-white overflow-hidden font-sans py-16 sm:py-24">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Section Header */}
+                {/* Section Header (No changes here) */}
                 <div className="text-center">
                     <h3 className="text-sm font-semibold tracking-widest uppercase" style={{ color: '#a1887f' }}>
                         NEWEST PORTFOLIO
@@ -68,31 +49,58 @@ const ProjectPortfolio = () => {
                     </h2>
                 </div>
 
-                {/* Projects Container: Scrollable Flex on Mobile, Scrollable Row on Desktop */}
+                {/* Swiper Container */}
                 <div className="mt-16">
-                    <div
-                        ref={scrollContainerRef}
-                        className="flex overflow-x-auto gap-8 pb-8 snap-x snap-mandatory scroll-smooth scrollbar-hide"
-                        style={{ scrollSnapType: 'x mandatory' }}
+                    <Swiper
+                        // --- Core Swiper configuration ---
+                        modules={[Pagination, Scrollbar]}
+                        onSwiper={(swiper) => { swiperRef.current = swiper; }}
+                        onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
+                        // --- Layout and Spacing (to match your original design) ---
+                        spaceBetween={32} // Corresponds to gap-8
+
+                        // --- Responsiveness ---
+                        breakpoints={{
+                            // Mobile
+                            0: { slidesPerView: 1, centeredSlides: true },
+                            // sm
+                            640: { slidesPerView: 1, centeredSlides: false },
+                            // md
+                            768: { slidesPerView: 2 },
+                            // lg
+                            1024: { slidesPerView: 3 },
+                        }}
+
+                        // --- Scrollbar (hidden as requested) ---
+                        scrollbar={{ draggable: true, hide: true }}
+
+                        // --- Accessibility and UX ---
+                        grabCursor={true}
+                        className="!pb-8" // Add padding-bottom to ensure shadows aren't cut off
                     >
                         {projects.map((project, index) => (
-                            <div key={index} className="flex-shrink-0 w-[90%] sm:w-[60%] md:w-[50%] lg:w-[calc(100%/3.2)-1rem)] snap-center ">
+                            <SwiperSlide key={index}>
                                 <ProjectCard {...project} />
-                            </div>
+                            </SwiperSlide>
                         ))}
-                    </div>
+                    </Swiper>
                 </div>
 
-                {/* Pagination Dots */}
+                {/* Custom Pagination Dots */}
                 <div className="mt-8 flex justify-center items-center gap-3">
                     {projects.map((_, index) => (
-                        <div key={index}>
+                        <button
+                            key={index}
+                            onClick={() => handleDotClick(index)}
+                            className="cursor-pointer"
+                            aria-label={`Go to slide ${index + 1}`}
+                        >
                             {index === activeIndex ? (
-                                <img src={DiamondIcon} alt="diamond icon" className="h-3.5 w-3.5" />
+                                <img src={DiamondIcon} alt="active slide" className="h-3.5 w-3.5" />
                             ) : (
-                                <div className="h-2 w-2 rounded-full bg-stone-400" />
+                                <div className="h-2 w-2 rounded-full bg-stone-400 transition-colors hover:bg-stone-500" />
                             )}
-                        </div>
+                        </button>
                     ))}
                 </div>
             </div>
