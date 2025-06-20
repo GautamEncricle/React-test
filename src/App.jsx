@@ -14,6 +14,8 @@ import TeamSection from './sections/TeamSection'
 import CollaboratorsSection from './sections/CollaboratorsSection'
 import ClientFeedback from './sections/ClientFeedback'
 import WorkShowcase from './sections/WorkShowCase'
+import SignupSection from './sections/SignUpSection'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -30,6 +32,8 @@ function App() {
       <CollaboratorsSection />
       <ClientFeedback />
       <WorkShowcase />
+      <SignupSection />
+      <Footer/>
     </>
   )
 }

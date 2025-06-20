@@ -44,7 +44,7 @@ const ClientFeedback = () => {
                 <h2 className="mt-2 text-4xl font-bold text-gray-800 md:text-5xl">
                     Feedback From Clients
                 </h2>
-
+                    
                 {/* Testimonial Card Wrapper */}
                 <div className="relative mt-12 min-h-[250px]">
                     <AnimatePresence mode="wait">

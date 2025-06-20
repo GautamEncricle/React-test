@@ -48,7 +48,7 @@ import screenshot from '../assets/images/workShowcase/Screenshot 2025-06-20 1310
 const WorkShowcase = () => {
 
     return (
-        <section className="w-full bg-white py-16 md:py-24">
+        <section className="w-full bg-white py-2 md:pt-1 md:pb-0">
             <div className="container mx-auto px-4">
                 {/* Section Header */}
                 <div className="mb-12 flex flex-col items-center gap-4 text-center">
