@@ -20,9 +20,6 @@ const partners = [
 ];
 
 const CollaboratorsSection = () => {
-    // Duplicate the partner list to create 12 items for the 2x6 desktop grid
-    const displayPartners = [...partners, ...partners];
-
     return (
         <section className="w-full bg-white py-16 md:py-24">
             <div className="container mx-auto max-w-7xl px-4">
@@ -36,27 +33,38 @@ const CollaboratorsSection = () => {
                     </h2>
                 </div>
 
-                {/* --- MOBILE: Infinite Marquee --- */}
-                {/* This entire block is visible on mobile and hidden on desktop (md and up) */}
+                {/* --- MOBILE: Single Infinite Marquee --- */}
+                {/* This block is ONLY visible on mobile screens */}
                 <div className="mt-12 md:hidden">
-                    <Marquee pauseOnHover={true} speed={50} gradient={false}>
+                    <Marquee pauseOnHover={true} speed={80} gradient={false}>
                         {partners.map((partner) => (
-                            // Add margin here to create space between logos in the marquee
-                            <div key={`marquee-${partner.id}`} className="mx-4 w-[250px]">
+                            <div key={`mobile-${partner.id}`} className="mx-4 w-[250px] flex-shrink-0">
                                 <PartnerLogo imageUrl={partner.imageUrl} name={partner.name} />
                             </div>
                         ))}
                     </Marquee>
                 </div>
 
-                {/* --- DESKTOP: Static 2x6 Grid --- */}
-                {/* This block is hidden by default and becomes a grid on desktop */}
-                <div className="mt-12 hidden md:grid md:grid-cols-6 md:gap-8">
-                    {displayPartners.map((partner, index) => (
-                        <div key={`grid-${index}`}>
-                            <PartnerLogo imageUrl={partner.imageUrl} name={partner.name} />
-                        </div>
-                    ))}
+                {/* --- DESKTOP: Dual Opposing Marquees --- */}
+                {/* This block is HIDDEN on mobile and visible on desktop */}
+                <div className="mt-12 hidden md:flex md:flex-col md:gap-8">
+                    {/* Row 1: Moves Right to Left (default) */}
+                    <Marquee pauseOnHover={true} speed={160} gradient={false}>
+                        {partners.map((partner) => (
+                            <div key={`row1-${partner.id}`} className="mx-4 w-[250px] flex-shrink-0">
+                                <PartnerLogo imageUrl={partner.imageUrl} name={partner.name} />
+                            </div>
+                        ))}
+                    </Marquee>
+
+                    {/* Row 2: Moves Left to Right */}
+                    <Marquee pauseOnHover={true} speed={120} gradient={false} direction="right">
+                        {partners.map((partner) => (
+                            <div key={`row2-${partner.id}`} className="mx-4 w-[250px] flex-shrink-0">
+                                <PartnerLogo imageUrl={partner.imageUrl} name={partner.name} />
+                            </div>
+                        ))}
+                    </Marquee>
                 </div>
             </div>
         </section>
