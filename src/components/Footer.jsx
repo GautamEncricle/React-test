@@ -44,7 +44,7 @@ const footerLinks = {
 
 const FooterLinkColumn = ({ title, links }) => (
     <div>
-        <h3 className="mb-6 font-heading text-lg font-semibold">{title}</h3>
+        <h3 className="mb-6 font-heading text-lg font-unbounded">{title}</h3>
         <ul className="space-y-4">
             {links.map((link, index) => (
                 <li key={index} className="flex items-center">
@@ -81,7 +81,7 @@ const Footer = () => {
                 <div className="flex flex-col md:flex-row items-center gap-6 md:gap-0">
                     <h2 className="text-center md:text-left md:max-w-[60vw] font-heading text-3xl md:text-4xl font-bold sm:text-5xl">
                         Partner with Us on Your Next Project.
-                        <span className="mt-4 block rounded-lg bg-[#796f51] px-4 py-2 text-brand-dark inline-block">
+                        <span className="mt-4 rounded-lg bg-[#796f51] px-4 py-2 text-brand-dark inline-block">
                             Start Now
                         </span>
                     </h2>
@@ -102,11 +102,11 @@ const Footer = () => {
                 <hr className="my-16 border-gray-100" />
 
                 {/* Main Footer Content */}
-                <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5 mt-10">
+                <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5 font-light mt-10">
                     {/* Column 1: Company Info */}
                     <div className="space-y-4 col-span-2 max-w-120">
                         <img src={logoImage} alt="RVA Logo" className="h-12" />
-                        <p className="text-gray-300">
+                        <p className="text-gray-300 font-light">
                             We are a lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec, pulvinar dapibus.
                         </p>
 
@@ -116,8 +116,8 @@ const Footer = () => {
                                     <img src={CallingImage} alt="calling" className="h-8 w-8" />
                                 </div>
                                 <div>
-                                    <p className="font-semibold">Call Us</p>
-                                    <a href="tel:000-123-456789" className="text-white hover:text-[#4c4738]">000-123-456789</a>
+                                    <p className="font-unbounded">Call Us</p>
+                                    <a href="tel:000-123-456789" className="text-white text-sm font-light hover:text-[#4c4738]">000-123-456789</a>
                                 </div>
                             </div>
                             <div className="flex items-center gap-4">
@@ -125,8 +125,8 @@ const Footer = () => {
                                     <img src={EmailImage} alt="email" className="h-8 w-8" />
                                 </div>
                                 <div>
-                                    <p className="font-semibold">Email Us</p>
-                                    <a href="mailto:Info@Example.Com" className="text-white hover:text-[#4c4738]">Info@Example.Com</a>
+                                    <p className="font-unbounded">Email Us</p>
+                                    <a href="mailto:Info@Example.Com" className="text-white font-light hover:text-[#4c4738]">Info@Example.Com</a>
                                 </div>
                             </div>
                         </div>
@@ -143,7 +143,7 @@ const Footer = () => {
                 {/* Bottom Bar */}
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left pb-8">
                     <div className="flex items-center gap-4">
-                        <p className="font-semibold">Follow Us On:</p>
+                        <p className="font-bold">Follow Us On:</p>
                         <div className="flex gap-2">
                             {socialIcons.map((social, index) => (
                                 <a
@@ -158,7 +158,7 @@ const Footer = () => {
                         </div>
                     </div>
 
-                    <p className="text-sm text-gray-400">
+                    <p className="text-lg font-light text-gray-400">
                         © {new Date().getFullYear()} RVA Rushikesh Vagadia & Associates. All rights reserved.
                     </p>
 
