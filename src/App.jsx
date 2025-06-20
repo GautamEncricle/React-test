@@ -14,7 +14,7 @@ import TeamSection from './sections/TeamSection'
 import CollaboratorsSection from './sections/CollaboratorsSection'
 import ClientFeedback from './sections/ClientFeedback'
 import WorkShowcase from './sections/WorkShowcase'
-import SignupSection from './sections/SignUpSection'
+import SignupSection from './sections/SignupSection'
 import Footer from './components/Footer'
 
 function App() {
