@@ -1,11 +1,4 @@
 import React from 'react';
-import {
-    FaFacebookF,
-    FaInstagram,
-    FaTwitter,
-    FaLinkedinIn,
-    FaChevronUp,
-} from 'react-icons/fa';
 
 import backgroundImage from '../assets/images/footer/background.png';
 
@@ -14,8 +7,8 @@ import previewImage2 from '../assets/images/workShowcase/Figure.png';
 import previewImage3 from '../assets/images/workShowcase/Figure3.png';
 
 import logoImage from '../assets/icons/Logo.svg';
-import EmailImage from '../assets/icons/email.png';
-import CallingImage from '../assets/icons/calling.png';
+import EmailImage from '../assets/icons/email.svg';
+import CallingImage from '../assets/icons/calling.svg';
 import linkedinImage from '../assets/icons/linkedin.png'
 import twitterImage from '../assets/icons/twitter.svg'
 import instagramImage from '../assets/icons/instagram.png'
@@ -72,9 +65,9 @@ const Footer = () => {
 
     const socialIcons = [
         { icon: facebookImage, href: '#' },
-        { icon: <FaInstagram />, href: '#' },
-        { icon: <FaTwitter />, href: '#' },
-        { icon: <FaLinkedinIn />, href: '#' },
+        { icon: instagramImage, href: '#' },
+        { icon: twitterImage, href: '#' },
+        { icon: linkedinImage, href: '#' },
     ];
 
     return (
@@ -111,7 +104,7 @@ const Footer = () => {
                 {/* Main Footer Content */}
                 <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5 mt-10">
                     {/* Column 1: Company Info */}
-                    <div className="space-y-4 col-span-2 max-w-100">
+                    <div className="space-y-4 col-span-2 max-w-120">
                         <img src={logoImage} alt="RVA Logo" className="h-12" />
                         <p className="text-gray-300">
                             We are a lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec, pulvinar dapibus.
@@ -119,17 +112,21 @@ const Footer = () => {
 
                         <div className="flex flex-col sm:flex-row gap-6 sm:gap-12 mt-6">
                             <div className="flex items-center gap-4">
-                                <img src={CallingImage} alt="calling" className="h-8 w-8" />
+                                <div className='h-12 w-12 rounded-full flex justify-center items-center bg-gray-300/30'>
+                                    <img src={CallingImage} alt="calling" className="h-8 w-8" />
+                                </div>
                                 <div>
                                     <p className="font-semibold">Call Us</p>
-                                    <a href="tel:000-123-456789" className="text-gray-300 hover:text-white">000-123-456789</a>
+                                    <a href="tel:000-123-456789" className="text-white hover:text-[#4c4738]">000-123-456789</a>
                                 </div>
                             </div>
                             <div className="flex items-center gap-4">
-                                <img src={EmailImage} alt="email" className="h-8 w-8" />
+                                <div className='h-12 w-12 rounded-full flex justify-center items-center bg-gray-300/30'>
+                                    <img src={EmailImage} alt="email" className="h-8 w-8" />
+                                </div>
                                 <div>
                                     <p className="font-semibold">Email Us</p>
-                                    <a href="mailto:Info@Example.Com" className="text-gray-300 hover:text-white">Info@Example.Com</a>
+                                    <a href="mailto:Info@Example.Com" className="text-white hover:text-[#4c4738]">Info@Example.Com</a>
                                 </div>
                             </div>
                         </div>
@@ -155,7 +152,7 @@ const Footer = () => {
                                     className="flex h-10 w-10 items-center justify-center rounded-lg border border-[#796f51] text-gray-300 transition hover:border-brand-accent hover:bg-brand-accent hover:text-white"
                                     aria-label="Social"
                                 >
-                                    {social.icon}
+                                    <img src={social.icon} alt="social icon" className="h-6 w-6" />
                                 </a>
                             ))}
                         </div>
@@ -167,10 +164,10 @@ const Footer = () => {
 
                     <button
                         onClick={scrollToTop}
-                        className="flex h-10 w-10 items-center justify-center rounded-md bg-brand-accent text-brand-dark transition hover:-translate-y-1"
+                        className="flex h-10 w-10 items-center justify-center rounded-md bg-brand-accent text-brand-dark transition hover:-translate-y-1 rounded-lg border border-[#796f51] text-gray-300 transition hover:border-brand-accent hover:bg-brand-accent hover:text-white bg-[#796f51]"
                         aria-label="Scroll to top"
                     >
-                        <FaChevronUp />
+                        <img src={uppImg} alt="Scroll to top" className="h-6 w-6" />
                     </button>
                 </div>
             </div>
