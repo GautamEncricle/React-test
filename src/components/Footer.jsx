@@ -72,7 +72,7 @@ const Footer = () => {
 
     return (
         <footer
-            className="bg-brand-dark bg-cover bg-center w-[338px] md:w-full overflow-hidden text-white"
+            className="bg-brand-dark bg-cover bg-center w-full overflow-hidden text-white"
             style={{ backgroundImage: `url(${backgroundImage})` }}
         >
             <div className="container mx-auto px-4 pt-16 sm:px-6 lg:px-8">
