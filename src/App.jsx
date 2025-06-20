@@ -10,6 +10,8 @@ import CreativeSolutions from './sections/CreativeSolutions'
 import ProjectPortfolio from './sections/ProjectPortfolio'
 import ProjectProcess from './sections/ProjectProcess'
 import ProjectDetails from './sections/ProjectsDetails'
+import TeamSection from './sections/TeamSection'
+import CollaboratorsSection from './sections/CollaboratorsSection'
 
 function App() {
 
@@ -22,6 +24,8 @@ function App() {
       <ProjectPortfolio />
       <ProjectProcess />
       <ProjectDetails />
+      <TeamSection />
+      <CollaboratorsSection/>
     </>
   )
 }
