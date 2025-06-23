@@ -75,14 +75,14 @@ const ClientFeedback = () => {
                     <button
                         onClick={handlePrev}
                         aria-label="Previous feedback"
-                        className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-300 text-gray-800 transition hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+                        className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-300 text-gray-800 transition hover:bg-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2 cursor-pointer"
                     >
                         <FaArrowLeft />
                     </button>
                     <button
                         onClick={handleNext}
                         aria-label="Next feedback"
-                        className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-900 text-white transition hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2"
+                        className="flex h-12 w-12 items-center justify-center rounded-full bg-gray-900 text-white transition hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:ring-offset-2 cursor-pointer"
                     >
                         <FaArrowRight />
                     </button>

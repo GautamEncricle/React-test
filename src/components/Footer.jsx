@@ -164,7 +164,7 @@ const Footer = () => {
 
                     <button
                         onClick={scrollToTop}
-                        className="flex h-10 w-10 items-center justify-center rounded-md bg-brand-accent text-brand-dark transition hover:-translate-y-1 rounded-lg border border-[#796f51] text-gray-300 transition hover:border-brand-accent hover:bg-brand-accent hover:text-white bg-[#796f51]"
+                        className="flex h-10 w-10 items-center justify-center rounded-md cursor-pointer bg-brand-accent text-brand-dark transition hover:-translate-y-1 rounded-lg border border-[#796f51] text-gray-300 transition hover:border-brand-accent hover:bg-brand-accent hover:text-white bg-[#796f51]"
                         aria-label="Scroll to top"
                     >
                         <img src={uppImg} alt="Scroll to top" className="h-6 w-6" />

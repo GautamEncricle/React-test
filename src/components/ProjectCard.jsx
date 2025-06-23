@@ -11,11 +11,11 @@ const ProjectCard = ({ imageSrc, title, description }) => {
                 {/* --- Hover Overlay --- */}
                 <div
                     className="
-              absolute inset-x-0 bottom-0 h-26
-              bg-[#747256]/80 bg-opacity-[80%]
-              p-6 flex flex-col justify-end 
-              opacity-0 group-hover:opacity-100 
-              transition-opacity duration-300 ease-in-out"
+                        absolute inset-x-0 bottom-0 h-26
+                        bg-[#747256]/80 bg-opacity-[80%]
+                        p-6 flex flex-col justify-end 
+                        opacity-0 group-hover:opacity-100 
+                        transition-opacity duration-300 ease-in-out"
                 >
                     <p className="unbounded-light text-white text-sm pt-2">
                         {description}
@@ -27,12 +27,12 @@ const ProjectCard = ({ imageSrc, title, description }) => {
                 <a
                     href="#"
                     className="
-    absolute top-5 right-5 h-12 w-12 
-    bg-emerald-700 rounded-full 
-    flex items-center justify-center
-    transform scale-0 group-hover:scale-100 
-    transition-transform duration-300 ease-in-out
-  "
+                    absolute top-5 right-5 h-12 w-12 
+                    bg-emerald-700 rounded-full 
+                    flex items-center justify-center
+                    transform scale-0 group-hover:scale-100 
+                    transition-transform duration-300 ease-in-out
+                    "
                 >
                     <img src={ExternalLinkIcon} alt="external link icon" className="h-6 w-6" />
                 </a>

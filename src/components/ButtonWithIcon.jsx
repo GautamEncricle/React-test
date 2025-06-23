@@ -9,7 +9,7 @@ const ButtonWithIcon = ({
   width = 'w-[222px]',
   height = 'h-[50px]',
 }) => {
-  const baseClasses = clsx( 
+  const baseClasses = clsx(
     'relative',
     'flex',
     'pl-2 pr-0 pt-1 pb-1',
@@ -18,8 +18,9 @@ const ButtonWithIcon = ({
     'bg-[#796F51]',
     'group',
     'overflow-hidden',
+    'cursor-pointer',
     width,
-    height
+    height,
   );
 
   const textClasses = clsx(

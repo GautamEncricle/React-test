@@ -15,7 +15,7 @@ const ServiceTabButton = ({ label, isActive, onClick }) => {
     return (
         <button
             onClick={onClick}
-            className={`${baseClasses} ${isActive ? activeClasses : inactiveClasses}`}
+            className={`${baseClasses} ${isActive ? activeClasses : inactiveClasses} cursor-pointer`}
         >
             {label}
         </button>

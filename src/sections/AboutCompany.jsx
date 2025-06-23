@@ -119,14 +119,14 @@ const AboutCompany = () => {
                         <div className="flex justify-center mt-4 space-x-4">
                             <button
                                 onClick={() => scroll(-200)}
-                                className="p-3 rounded-full bg-[#796f51] hover:bg-[#015829] focus:outline-none"
+                                className="p-3 rounded-full bg-[#796f51] hover:bg-[#015829] focus:outline-none cursor-pointer"
                                 aria-label="Scroll left"
                             >
                                 <FiArrowLeft size={24} />
                             </button>
                             <button
                                 onClick={() => scroll(200)}
-                                className="p-3 rounded-full bg-[#796f51] hover:bg-[#015829] focus:outline-none"
+                                className="p-3 rounded-full bg-[#796f51] hover:bg-[#015829] focus:outline-none cursor-pointer"
                                 aria-label="Scroll right"
                             >
                                 <FiArrowRight size={24} />

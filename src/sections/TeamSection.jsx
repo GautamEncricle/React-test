@@ -108,14 +108,14 @@ const TeamSection = () => {
                     <button
                         onClick={() => scroll('left')}
                         aria-label="Scroll left"
-                        className="flex h-12 w-12 items-center justify-center rounded-full bg-[#6B624E] text-white transition hover:bg-[#5a5241] focus:outline-none focus:ring-2 focus:ring-[#6B624E] focus:ring-offset-2"
+                        className="flex h-12 w-12 items-center justify-center rounded-full bg-[#6B624E] text-white transition hover:bg-[#5a5241] focus:outline-none focus:ring-2 focus:ring-[#6B624E] focus:ring-offset-2 cursor-pointer"
                     >
                         <FaArrowLeft />
                     </button>
                     <button
                         onClick={() => scroll('right')}
                         aria-label="Scroll right"
-                        className="flex h-12 w-12 items-center justify-center rounded-full bg-[#6B624E] text-white transition hover:bg-[#5a5241] focus:outline-none focus:ring-2 focus:ring-[#6B624E] focus:ring-offset-2"
+                        className="flex h-12 w-12 items-center justify-center rounded-full bg-[#6B624E] text-white transition hover:bg-[#5a5241] focus:outline-none focus:ring-2 focus:ring-[#6B624E] focus:ring-offset-2 cursor-pointer"
                     >
                         <FaArrowRight />
                     </button>

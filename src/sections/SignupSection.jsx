@@ -77,7 +77,7 @@ const SignupSection = () => {
                         />
                         <button
                             type="submit"
-                            className="mt-2 w-full shrink-0 rounded-md bg-[#796f51] px-8 py-3 font-semibold text-white transition hover:bg-opacity-90 sm:mt-0 sm:w-auto"
+                            className="mt-2 w-full shrink-0 rounded-md bg-[#796f51] hover:bg-[#6b624e] cursor-pointer px-8 py-3 font-semibold text-white transition hover:bg-opacity-90 sm:mt-0 sm:w-auto"
                         >
                             Subscribe
                         </button>
